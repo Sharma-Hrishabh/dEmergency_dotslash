@@ -1,8 +1,14 @@
+<<<<<<< HEAD
 import React, { Component }from 'react';
 import {Button, Icon, Form, Container, Divider, Label, Dimmer, Loader} from 'semantic-ui-react'
+=======
+import React, { Component } from 'react';
+import { Button,Icon, Form, Container,Divider,Label } from 'semantic-ui-react'
+>>>>>>> front-end
 import Layout from '../common/Layout';
 import Header from '../common/Header';
-
+import App from '../connection/app';
+import {start} from '../connection/app';
 class Hospital extends Component{
     state = {
         address: '',
@@ -20,8 +26,8 @@ class Hospital extends Component{
     }
     onSubmit = () => {
       this.setState({loading: true});
-
-      console.log(this.state.phone)
+      var acc = start();
+      console.log(acc);
     };
 
     render() {
@@ -39,23 +45,23 @@ class Hospital extends Component{
                 <Container style={{padding:10}} >
                 <Form >
                     <Form.Field >
-                        <input type='text' focus="true" placeholder='Phone no' onChange={(e) => {this.setState({phone: e.target.value})}}/>
+                        <input type='text' focus placeholder='Phone no' onChange={(e) => {this.setState({phone: e.target.value})}}/>
                     </Form.Field>
 
                     <Form.Field>
-                        <input type='text'  focus="true" placeholder='Address' onChange={(e) => {this.setState({address: e.target.value})}}/>
+                        <input type='text'  focus placeholder='Address' onChange={(e) => {this.setState({address: e.target.value})}}/>
                     </Form.Field>
 
                     <Form.Field>
-                        <input type='text'focus="true" placeholder='Latitude' onChange={(e) => {this.setState({lat: e.target.value})}}/>
+                        <input type='text'focus placeholder='Latitude' onChange={(e) => {this.setState({lat: e.target.value})}}/>
                     </Form.Field>
 
                     <Form.Field >
-                        <input type='text' focus="true" placeholder='Longitude' onChange={(e) => {this.setState({long: e.target.value})}}/>
+                        <input type='text' focus placeholder='Longitude' onChange={(e) => {this.setState({long: e.target.value})}}/>
                     </Form.Field>
 
                     <Form.Field >
-                        <input type='text' focus="true" placeholder='Availability' onChange={(e) => {this.setState({avalibility: e.target.value})}}/>
+                        <input type='text' focus placeholder='Availability' onChange={(e) => {this.setState({avalibility: e.target.value})}}/>
                     </Form.Field>
 
                 </Form>
