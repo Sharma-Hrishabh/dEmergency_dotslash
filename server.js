@@ -22,7 +22,7 @@ app.prepare().then(() => {
   server.listen(port, () => {
 
     // fallback - use your fallback strategy (local node / hosted node + in-dapp id mgmt / fail)
-    //truffle_connect.web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+    // truffle_connect.web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
 
     //console.log("Express Listening at http://localhost:" + port);
 
