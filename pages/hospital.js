@@ -3,7 +3,7 @@ import { Button,Icon, Form, Container,Divider,Label } from 'semantic-ui-react'
 import Layout from '../common/Layout';
 import Header from '../common/Header';
 import App from '../connection/app';
-import {start} from '../connection/app';
+// import {start} from '../connection/app';
 class Hospital extends Component{
     state = {
         address: '',
