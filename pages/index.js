@@ -8,7 +8,7 @@ class Index extends Component{
         loading: false
     };
     componentDidMount() {
-      console.log("test");
+        console.log("test");
         const a = App.start();
         console.log(a);
         this.setState({loadingPage: false});

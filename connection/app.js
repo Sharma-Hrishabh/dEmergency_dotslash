@@ -18,6 +18,7 @@ module.exports = {
     }
 
     web3 = new Web3(web3Provider);
+    console.log(web3.eth.defaultAccount);
     // Get the initial account balance so it can be displayed.
 
     // var self = this;
@@ -51,26 +52,38 @@ module.exports = {
     //
     //   return (self.accounts);
     // });
+    return 1;
   },
 
 
-  addHospital: function(account,hospital,location,mobileNumber,capacity,availability,speciality,callback) {
-    var self = this;
+  addHospital: function(hospital,location,mobileNumber,capacity,availability,speciality) {
+    if(typeof web3 !== undefined) {
+        web3Provider = web3.currentProvider;
+        web3.eth.defaultAccount = web3.eth.accounts[0];
+        console.log("hii");
+    }
+    else {
+        alert("MetaMask not found! Working on localhost:7545.");
+        web3Provider = new web3.providers.HttpProvider("http://localhost:7545");
+        console.log("Hii");
+    }
 
+    web3 = new Web3(web3Provider);
+    console.log(web3.eth.defaultAccount);
     // Bootstrap the MetaCoin abstraction for Use.
-    dEmergency.setProvider(self.web3.currentProvider);
-
+    dEmergency.setProvider(web3.currentProvider);
     var meta;
     dEmergency.deployed().then(function(instance) {
       meta = instance;
-      return meta.addHospital.send(hospital,location,mobileNumber,capacity,availability,speciality, {from: account});
+      return meta.addHospital(hospital,location,mobileNumber,capacity,availability,speciality, {from: web3.eth.defaultAccount});
     }).then(function(value) {
         //callback(value.valueOf());
+        console.log(value);
     }).catch(function(e) {
         console.log(e);
-        callback("Error 404");
     });
   },
+
   addPatient: function(location,mobileNumber,speciality,name, callback) {
     var self = this;
 

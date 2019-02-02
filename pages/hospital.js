@@ -9,17 +9,29 @@ class Hospital extends Component{
         lat: '',
         long: '',
         phone: '',
-        capacity: '',
-        avalibility: '',
+        capacity: 0,
+        availability: 0,
         loading: false,
-        loadingPage: true
+        loadingPage: true,
+        speciality:0,
     };
     componentDidMount() {
+      const a = App.start();
+      console.log(a);
+      console.log("sacsd");
         this.setState({loadingPage: false});
     }
     onSubmit = () => {
       this.setState({loading: true});
-      console.log(this.state.phone)
+      // console.log(this.state.phone)
+      var address = this.state.address;
+      var loc=this.state.lat+'x'+this.state.long;
+      var phone =this.state.phone;
+      var availability =this.state.availability;
+      var capacity = this.state.capacity;
+      var speciality = this.state.speciality;
+      console.log(typeof address);
+      App.addHospital(address,loc,phone,availability,capacity,speciality)
     };
 
     render() {
@@ -53,7 +65,13 @@ class Hospital extends Component{
                     </Form.Field>
 
                     <Form.Field >
-                        <input type='text' focus="true" placeholder='Availability' onChange={(e) => {this.setState({avalibility: e.target.value})}}/>
+                        <input type='number' focus="true" placeholder='Availability' onChange={(e) => {this.setState({availability: e.target.value})}}/>
+                    </Form.Field>
+                    <Form.Field >
+                        <input type='number' focus="true" placeholder='Capacity' onChange={(e) => {this.setState({capacity: e.target.value})}}/>
+                    </Form.Field>
+                    <Form.Field >
+                        <input type='number' focus="true" placeholder='Speciality' onChange={(e) => {this.setState({capacity: e.target.value})}}/>
                     </Form.Field>
 
                 </Form>
