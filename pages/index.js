@@ -14,7 +14,7 @@ class Index extends Component{
     };
     handleClose= () => {
         this.setState({open: false});
-        this.setState({loading: false})
+        this.setState({loading: false});
     };
 
     handleOpen = () => {
@@ -23,11 +23,6 @@ class Index extends Component{
             console.log("Your browser does not support Geolocation");
             return;
         }
-        if(!this.props.isGeolocationEnabled){
-
-        }
-        console.log(this.props.coords.latitude);
-        console.log(this.props.coords.longitude);
         this.setState({loading: false})
     };
     onReport = () => {
@@ -43,6 +38,60 @@ class Index extends Component{
         const a = App.start();
         this.setState({loadingPage: false});
     }
+    renderEmergency = () => {
+        if(this.props.isGeolocationEnabled)
+      return(
+          <div>
+              <Header>Report an Emergency</Header>
+              <Form >
+                  <Form.Field>
+                      <input type='text' focus="true" placeholder='Full Name' onChange={(e) => {this.setState({name: e.target.value})}}/>
+                  </Form.Field>
+                  <Form.Field >
+                      <input type='text' focus="true" placeholder='Phone Number' onChange={(e) => {this.setState({phone: e.target.value})}}/>
+                  </Form.Field>
+                  <Form.Field >
+                      <input type='text' focus="true" placeholder='Speciality' onChange={(e) => {this.setState({speciality: e.target.value})}}/>
+                  </Form.Field>
+                  <Form.Field >
+                      <Button
+                          loading={this.state.loading}
+                          negative
+                          style={{ flex: 1, justifyContent: 'flex-end'}}
+                          onClick={this.handleClose}
+                      >
+                          Cancel
+                      </Button>
+                      <Button
+                           loading={this.state.loading}
+                           style={{ background: '#3fa53f', color:'#ffffff',flex: 1, justifyContent: 'flex-end'}}
+                           onClick={this.onReport}
+                      >
+                          Report
+                      </Button>
+                  </Form.Field>
+              </Form>
+          </div>
+      );
+        else {
+            return(
+                <div>
+                    <Header>Please Give Location Permission for better reachability.</Header>
+                    <Form >
+                        <Form.Field>
+                            <Button
+                                loading={this.state.loading}
+                                style={{ background: '#3fa53f', color:'#ffffff',flex: 1, justifyContent: 'flex-end'}}
+                                onClick={this.handleClose}
+                            >
+                                OK
+                            </Button>
+                        </Form.Field>
+                    </Form>
+                </div>
+            );
+        }
+    };
 
     render() {
         if(this.state.loadingPage){
@@ -74,6 +123,7 @@ class Index extends Component{
                         }
                         >
                     <Segment style={{ left: '35%', width: 500,position: 'fixed', top: '30%', zIndex: 1000 }}>
+<<<<<<< HEAD
                         <Header>Report an Emergency</Header>
                         <Form >
                             <Form.Field>
@@ -103,6 +153,9 @@ class Index extends Component{
                             </Button>
                             </Form.Field>
                         </Form>
+=======
+                        {this.renderEmergency()}
+>>>>>>> a6fbd138547efceb74f5ec6ba5a04cde0f05ad31
                     </Segment>
                 </TransitionablePortal>
                 </div>
@@ -114,5 +167,5 @@ export default geolocated({
     positionOptions: {
         enableHighAccuracy: false,
     },
-    userDecisionTimeout: 5000,
+    userDecisionTimeout: 1000,
 })(Index);
