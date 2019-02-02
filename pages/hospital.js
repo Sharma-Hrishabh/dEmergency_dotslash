@@ -1,5 +1,5 @@
 import React, { Component }from 'react';
-import { Button,Icon, Form, Container,Divider,Label } from 'semantic-ui-react'
+import {Button, Icon, Form, Container, Divider, Label, Dimmer, Loader} from 'semantic-ui-react'
 import Layout from '../common/Layout';
 import Header from '../common/Header';
 
@@ -11,10 +11,12 @@ class Hospital extends Component{
         phone: '',
         capacity: '',
         avalibility: '',
-        loading: false
+        loading: false,
+        loadingPage: true
     };
     componentDidMount() {
-
+        
+        this.setState({loadingPage: false});
     }
     onSubmit = () => {
       this.setState({loading: true});
@@ -23,6 +25,15 @@ class Hospital extends Component{
     };
 
     render() {
+        if(this.state.loadingPage){
+            return(
+                <Layout>
+                    <Dimmer active inverted>
+                        <Loader size='massive'>Hang On...</Loader>
+                    </Dimmer>
+                </Layout>
+            );
+        }
         return (
             <Layout>
                 <Container style={{padding:10}} >
