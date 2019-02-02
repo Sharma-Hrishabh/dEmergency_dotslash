@@ -26,7 +26,7 @@ class Index extends Component{
         this.setState({loading: false})
     };
     onReport = () => {
-      
+
         this.setState({open: true});
         var fullName = this.state.name
         var phone = this.state.phone
@@ -124,39 +124,7 @@ class Index extends Component{
                         }
                         >
                     <Segment style={{ left: '35%', width: 500,position: 'fixed', top: '30%', zIndex: 1000 }}>
-<<<<<<< HEAD
-                        <Header>Report an Emergency</Header>
-                        <Form >
-                            <Form.Field>
-                                <input type='text' focus="true" placeholder='Full Name' onChange={(e) => {this.setState({name: e.target.value})}}/>
-                            </Form.Field>
-                            <Form.Field >
-                                <input type='text' focus="true" placeholder='Phone Number' onChange={(e) => {this.setState({phone: e.target.value})}}/>
-                            </Form.Field>
-                            <Form.Field >
-                                <input type='number' focus="true" placeholder='Speciality' onChange={(e) => {this.setState({speciality: e.target.value})}}/>
-                            </Form.Field>
-                            <Form.Field >
-                            <Button
-                                negative
-                                loading={this.state.loading}
-                                style={{ flex: 1, justifyContent: 'flex-end'}}
-                                onClick={this.handleClose}
-                            >
-                                Cancel
-                            </Button>
-                            <Button
-                                loading={this.state.loading}
-                                style={{ background: '#3fa53f', color:'#ffffff',flex: 1, justifyContent: 'flex-end'}}
-                                onClick={this.onReport}
-                            >
-                                Report
-                            </Button>
-                            </Form.Field>
-                        </Form>
-=======
                         {this.renderEmergency()}
->>>>>>> a6fbd138547efceb74f5ec6ba5a04cde0f05ad31
                     </Segment>
                 </TransitionablePortal>
                 </div>

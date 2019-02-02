@@ -109,7 +109,8 @@ module.exports = {
       //return meta.sendCoin(receiver, amount, {from: sender});
       return meta.addPatient(location,mobileNumber,speciality,name, {from: web3.eth.defaultAccount});
     }).then(function(result) {
-              console.log("done");
+              console.log(result);
+              return result;
           }).catch(function(e) {
       console.log(e);
       callback("ERROR 404");
