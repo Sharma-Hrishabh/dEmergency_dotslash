@@ -5,6 +5,7 @@ import App from '../connection/app';
 import {geolocated} from 'react-geolocated';
 class Index extends Component{
     state={
+        msg:'',
         name: '',
         phone: '',
         speciality:0,
@@ -26,13 +27,14 @@ class Index extends Component{
         this.setState({loading: false})
     };
     onReport = () => {
-
+      
         this.setState({open: true});
-        var fullName = this.state.name
-        var phone = this.state.phone
-        var speciality = this.state.speciality
-        var tempLocation = "100x80"
-        App.addPatient(tempLocation,phone,speciality,name)
+        var fullName = this.state.name;
+        var phone = this.state.phone;
+        var speciality = this.state.speciality;
+        var tempLocation = "100x80";
+        var res = App.addPatient(tempLocation,phone,speciality,fullName);
+        this.setState({open: true, msg: res});
     };
 
     componentDidMount() {
@@ -41,8 +43,8 @@ class Index extends Component{
     }
     renderEmergency = () => {
         if(this.props.isGeolocationEnabled)
-      return(
-          <div>
+            return(
+                <div>
               <Header>Report an Emergency</Header>
               <Form >
                   <Form.Field>
@@ -73,7 +75,23 @@ class Index extends Component{
                   </Form.Field>
               </Form>
           </div>
-      );
+            );
+        else if(!!this.state.msg)
+            return(
+                <div>
+                    <Header>{this.state.msg}</Header>
+                    <Form >
+                        <Form.Field>
+                            <Button
+                                style={{ background: '#3fa53f', color:'#ffffff',flex: 1, justifyContent: 'flex-end'}}
+                                onClick={this.handleClose}
+                            >
+                                OK
+                            </Button>
+                        </Form.Field>
+                    </Form>
+                </div>
+            );
         else {
             return(
                 <div>
@@ -81,7 +99,6 @@ class Index extends Component{
                     <Form >
                         <Form.Field>
                             <Button
-                                loading={this.state.loading}
                                 style={{ background: '#3fa53f', color:'#ffffff',flex: 1, justifyContent: 'flex-end'}}
                                 onClick={this.handleClose}
                             >
@@ -131,7 +148,7 @@ class Index extends Component{
             </Layout>
         );
     }
-};
+}
 export default geolocated({
     positionOptions: {
         enableHighAccuracy: false,
