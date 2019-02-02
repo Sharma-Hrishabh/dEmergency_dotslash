@@ -1,11 +1,11 @@
 const contract = require('truffle-contract');
 
-const demergency_artifact = require('../build/contracts/MetaCoin.json');
+const demergency_artifact = require('../build/contracts/dEmergency.json');
 var dEmergency = contract(demergency_artifact);
 
 module.exports = {
 
-  start: function(callback) {
+  start: function() {
     var self = this;
 
     // Bootstrap the MetaCoin abstraction for Use.
@@ -23,12 +23,13 @@ module.exports = {
         return;
       }
       self.accounts = accs;
-      self.account = self.accounts[2];
+      self.account = self.accounts[0];
 
-      callback(self.accounts);
+      return (self.accounts);
     });
   },
-  addHospital: function(account, callback) {
+
+  addHospital: function(account,hospital,location,mobileNumber,capacity,availability,speciality,callback) {
     var self = this;
 
     // Bootstrap the MetaCoin abstraction for Use.
@@ -37,7 +38,7 @@ module.exports = {
     var meta;
     dEmergency.deployed().then(function(instance) {
       meta = instance;
-      return meta.addHospital.send(hosptal,location,mobileNumber,capacity,availability,speciality, {from: account});
+      return meta.addHospital.send(hospital,location,mobileNumber,capacity,availability,speciality, {from: account});
     }).then(function(value) {
         //callback(value.valueOf());
     }).catch(function(e) {

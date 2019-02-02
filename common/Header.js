@@ -1,21 +1,25 @@
 import React, { Component } from 'react';
-import { Input, Menu } from 'semantic-ui-react'
+import { Menu, Icon } from 'semantic-ui-react'
+import { Link } from '../routes';
 
 class Header extends Component{
     render(){
         return(
             <Menu secondary style={{marginTop: 10}}>
-                <Menu.Item name='Logo' />
+                <Link route="/">
                 <Menu.Item
-                    name='messages'
+                    name='Hospital Finder'
+                    header
+                    style={{fontSize: 20, background: '#3fa53f', color: '#FFFFFF'}}
                 />
-                <Menu.Item
-                    name='friends'
-                />
+                </Link>
                 <Menu.Menu position='right'>
+                    <Link route="/hospitals">
                     <Menu.Item
-                        name='Add'
+                        name='Hospitals'
+                        style={{fontSize: 20, background: '#EC0000', color: '#FFFFFF' }}
                     />
+                    </Link>
                 </Menu.Menu>
             </Menu>
         );
