@@ -3,7 +3,7 @@ import { Button,Icon, Container } from 'semantic-ui-react'
 import Layout from '../common/Layout';
 import Header from '../common/Header';
 
-class Index extends Component{
+class Admin extends Component{
     componentDidMount() {
 
     }
@@ -11,17 +11,17 @@ class Index extends Component{
     render() {
         return (
             <Layout>
-                <div style={{display: 'flex', justifyContent: 'center', marginTop: 300 }}>
+                <div style={{display: 'flex', justifyContent: 'flex-end'}}>
                     <Button
-                        negative
+                        primary
                         size='big'
                         loading={false}
                     >
-                        Emergency
+                        Add Hospitals
                     </Button>
                 </div>
             </Layout>
         );
     }
 };
-export default Index
+export default Admin
