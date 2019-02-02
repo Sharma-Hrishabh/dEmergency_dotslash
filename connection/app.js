@@ -113,7 +113,8 @@ module.exports = {
               return result;
           }).catch(function(e) {
       console.log(e);
-      callback("ERROR 404");
+      // callback("ERROR 404");
+      return e;
     });
   }
 }
