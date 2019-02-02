@@ -8,8 +8,8 @@ class Index extends Component{
         loading: false
     };
     componentDidMount() {
-        //const a = App.start();
-        //console.log(a);
+        const a = App.start();
+        console.log(a);
         this.setState({loadingPage: false});
     }
     onEmergency = () => {
