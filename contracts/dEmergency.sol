@@ -45,8 +45,8 @@ contract dEmergency {
     }
 
 
-    function addPatient(address _patient,string memory location,string memory _mobileNumber,uint _speciality,string memory name) public returns(bool) {
-
+    function addPatient(string memory location,string memory _mobileNumber,uint _speciality,string memory name) public returns(bool) {
+        address _patient = msg.sender;
         address _hospital = HospitalLoc[location];
 
         require(HospitalInfo[_hospital].hospitalCapacity != 0);
@@ -74,6 +74,35 @@ contract dEmergency {
 
     }
 
+    // function addPatient(address _patient,string memory location,string memory _mobileNumber,uint _speciality,string memory name) public returns(bool) {
+
+    //     address _hospital = HospitalLoc[location];
+
+    //     require(HospitalInfo[_hospital].hospitalCapacity != 0);
+
+    //     if(HospitalInfo[_hospital].hospitalAvailability > 0)
+    //     {
+
+    //         HospitalInfo[_hospital].hospitalAvailability -= 1;
+    //         //PatientHospital[_patient]=_hospital;
+
+    //         PatientHospital[_hospital][_patient] = Patient(name,_mobileNumber);
+    //         //events triggered,for dagger
+    //         emit InformPatient(_hospital,HospitalInfo[_hospital].location, HospitalInfo[_hospital].mobileNumber);
+    //         emit InformHospital(_hospital, location, _mobileNumber);
+
+    //       return true;
+
+
+    //     }
+    //     else
+    //     {
+    //     return false;
+    //     }
+
+
+    // }
+
 
     function discharge(address _hospital,address _patient) public returns(bool){
 
@@ -91,6 +120,18 @@ contract dEmergency {
 
 
     }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
