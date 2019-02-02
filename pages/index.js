@@ -1,7 +1,6 @@
 import React, { Component }from 'react';
 import { Button,Icon, Container,Dimmer, Loader } from 'semantic-ui-react'
 import Layout from '../common/Layout';
-import Header from '../common/Header';
 
 class Index extends Component{
     state={
@@ -9,7 +8,8 @@ class Index extends Component{
         loading: false
     };
     componentDidMount() {
-
+        //const a = App.start();
+        //console.log(a);
         this.setState({loadingPage: false});
     }
     onEmergency = () => {

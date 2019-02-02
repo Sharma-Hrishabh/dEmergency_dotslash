@@ -1,8 +1,8 @@
 import React, { Component }from 'react';
 import {Button, Icon, Container, Dimmer, Loader} from 'semantic-ui-react'
 import Layout from '../common/Layout';
-import Header, {Link} from '../common/Header';
-
+import Header from '../common/Header';
+import { Link } from '../routes';
 class Admin extends Component{
 
     state={
