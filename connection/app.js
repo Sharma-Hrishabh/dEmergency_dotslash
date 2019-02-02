@@ -85,16 +85,29 @@ module.exports = {
   },
 
   addPatient: function(location,mobileNumber,speciality,name, callback) {
-    var self = this;
+    // var self = this;
+    if(typeof web3 !== undefined) {
+        web3Provider = web3.currentProvider;
+        web3.eth.defaultAccount = web3.eth.accounts[0];
+        console.log("hii");
+    }
+    else {
+        alert("MetaMask not found! Working on localhost:7545.");
+        web3Provider = new web3.providers.HttpProvider("http://localhost:7545");
+        console.log("Hii");
+    }
+
+    web3 = new Web3(web3Provider);
+    console.log(web3.eth.defaultAccount);
 
     // Bootstrap the MetaCoin abstraction for Use.
-    dEmergency.setProvider(self.web3.currentProvider);
+    dEmergency.setProvider(web3.currentProvider);
 
     var meta;
     dEmergency.deployed().then(function(instance) {
       meta = instance;
       //return meta.sendCoin(receiver, amount, {from: sender});
-      return meta.addPatient(patient,location,mobileNumber,speciality,name, {from: web3.eth.defaultAccount});
+      return meta.addPatient(location,mobileNumber,speciality,name, {from: web3.eth.defaultAccount});
     }).then(function(result) {
               console.log("done");
           }).catch(function(e) {

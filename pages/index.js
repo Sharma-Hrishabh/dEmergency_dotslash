@@ -7,6 +7,7 @@ class Index extends Component{
     state={
         name: '',
         phone: '',
+        speciality:0,
         open:false,
         loadingPage: true,
         loading: false
@@ -30,8 +31,11 @@ class Index extends Component{
         this.setState({loading: false})
     };
     onReport = () => {
-
-
+        var fullName = this.state.name
+        var phone = this.state.phone
+        var speciality = this.state.speciality
+        var tempLocation = "100x80"
+        App.addPatient(tempLocation,phone,speciality,name)
         this.setState({open: true});
     };
 
@@ -79,7 +83,7 @@ class Index extends Component{
                                 <input type='text' focus="true" placeholder='Phone Number' onChange={(e) => {this.setState({phone: e.target.value})}}/>
                             </Form.Field>
                             <Form.Field >
-                                <input type='text' focus="true" placeholder='Speciality' onChange={(e) => {this.setState({speciality: e.target.value})}}/>
+                                <input type='number' focus="true" placeholder='Speciality' onChange={(e) => {this.setState({speciality: e.target.value})}}/>
                             </Form.Field>
                             <Form.Field >
                             <Button
