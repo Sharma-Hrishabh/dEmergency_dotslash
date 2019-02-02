@@ -26,6 +26,7 @@ class Index extends Component{
         this.setState({loading: false})
     };
     onReport = () => {
+      
         this.setState({open: true});
         var fullName = this.state.name
         var phone = this.state.phone
