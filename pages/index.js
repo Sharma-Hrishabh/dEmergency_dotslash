@@ -1,13 +1,14 @@
 import React, { Component }from 'react';
 import { Button,Icon, Container,Dimmer, Loader } from 'semantic-ui-react'
 import Layout from '../common/Layout';
-
+import App from '../connection/App';
 class Index extends Component{
     state={
         loadingPage: true,
         loading: false
     };
     componentDidMount() {
+      console.log("test");
         const a = App.start();
         console.log(a);
         this.setState({loadingPage: false});

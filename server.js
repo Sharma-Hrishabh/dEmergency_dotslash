@@ -8,7 +8,7 @@ const routes = require('./routes');
 const handle = routes.getRequestHandler(app);
 
 app.prepare().then(() => {
-  const port = 3000 || process.env.PORT;
+  const port = 8000 || process.env.PORT;
   const server = express();
   const Web3 = require('web3');
   const truffle_connect = require('./connection/app.js');
