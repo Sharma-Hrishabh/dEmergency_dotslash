@@ -104,10 +104,10 @@ contract dEmergency {
     // }
 
 
-    function discharge(address _hospital,address _patient) public returns(bool){
-
-        require(msg.sender == creator);
-
+    function discharge(address _patient) public returns(bool){
+        address _hospital = msg.sender;
+        /* require(msg.sender == creator); */
+        require(HospitalInfo[_hospital].hospitalCapacity != 0);
         HospitalInfo[_hospital].hospitalAvailability += 1;
         delete PatientHospital[_hospital][_patient];
         return true;
