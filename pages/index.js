@@ -4,11 +4,13 @@ import Layout from '../common/Layout';
 import Header from '../common/Header';
 
 class Index extends Component{
+
     componentDidMount() {
 
     }
 
     render() {
+        
         return (
             <Layout>
                 <div style={{display: 'flex', justifyContent: 'center', marginTop: 300 }}>

@@ -11,7 +11,7 @@ class Admin extends Component{
     render() {
         return (
             <Layout>
-                <div style={{display: 'flex', justifyContent: 'flex-end'}}>
+                <div style={{display: 'flex', justifyContent: 'flex-end', marginTop: 30}}>
                     <Button
                         primary
                         size='big'
