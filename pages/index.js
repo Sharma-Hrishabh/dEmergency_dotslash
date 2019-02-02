@@ -31,12 +31,12 @@ class Index extends Component{
         this.setState({loading: false})
     };
     onReport = () => {
+        this.setState({open: true});
         var fullName = this.state.name
         var phone = this.state.phone
         var speciality = this.state.speciality
         var tempLocation = "100x80"
         App.addPatient(tempLocation,phone,speciality,name)
-        this.setState({open: true});
     };
 
     componentDidMount() {
