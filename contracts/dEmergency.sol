@@ -64,15 +64,21 @@ contract dEmergency {
     }
 
 
-    function discharge(address _hospital,address _patient) public {
+    function discharge(address _hospital) public{
 
         require(msg.sender == creator);
 
         HospitalInfo[_hospital].hospitalAvailability += 1;
-        PatientHospital[_patient]=address(0);
+
 
     }
 
+    function showPatientAllotment(address _patient) public returns(address){
+
+        return PatientHospital[_patient];
+
+
+    }
 
 
 
