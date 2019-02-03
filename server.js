@@ -1,5 +1,6 @@
 const express = require('express');
 const next = require('next');
+//const Dagger = require("eth-dagger");
 
 const app = next({
   dev: process.env.NODE_ENV !== 'production'
@@ -18,6 +19,9 @@ app.prepare().then(() => {
   server.get('*', (req, res) => {
         return handle(req, res)
   });
+
+//  var dagger = new Dagger("mqtts://kovan.dagger.matic.network"); // dagger server
+
 
   server.listen(port, () => {
 
