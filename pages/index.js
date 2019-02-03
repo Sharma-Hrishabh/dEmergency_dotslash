@@ -141,7 +141,7 @@ class Index extends Component{
                         }
                         >
                     <Segment style={{ left: '35%', width: 500,position: 'fixed', top: '30%', zIndex: 1000 }}>
-                        {this.renderEmergency()}
+                        {this.renderEmergency}
                     </Segment>
                 </TransitionablePortal>
                 </div>
