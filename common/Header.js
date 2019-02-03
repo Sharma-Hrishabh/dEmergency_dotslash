@@ -8,7 +8,7 @@ class Header extends Component{
             <Menu secondary style={{marginTop: 10}}>
                 <Link route="/">
                 <Menu.Item
-                    name='Hospital Finder'
+                    name='dEmergency'
                     header
                     style={{fontSize: 20, background: '#3fa53f', color: '#FFFFFF'}}
                 />
@@ -16,7 +16,7 @@ class Header extends Component{
                 <Menu.Menu position='right'>
                     <Link route="/hospitals">
                     <Menu.Item
-                        name='Hospitals'
+                        name='Admin'
                         style={{fontSize: 20, background: '#EC0000', color: '#FFFFFF' }}
                     />
                     </Link>
