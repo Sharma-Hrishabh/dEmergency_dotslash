@@ -27,14 +27,13 @@ class Index extends Component{
         this.setState({loading: false})
     };
     onReport = () => {
-
-        this.setState({open: true});
+        this.setState({open: true, loading: true});
         var fullName = this.state.name;
         var phone = this.state.phone;
         var speciality = this.state.speciality;
         var tempLocation = "100x80";
         var res = App.addPatient(tempLocation,phone,speciality,fullName);
-        this.setState({open: true, msg: res});
+        this.setState({ msg: res.error});
     };
 
     componentDidMount() {
@@ -93,6 +92,7 @@ class Index extends Component{
                 </div>
             );
         else {
+            this.setState({loading: false});
             return(
                 <div>
                     <Header>Please Give Location Permission for better reachability.</Header>
