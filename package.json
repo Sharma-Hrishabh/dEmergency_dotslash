@@ -36,6 +36,7 @@
     "next": "^7.0.2",
     "next-routes": "^1.4.2",
     "nodemon": "^1.14.12",
+    "python-shell": "^1.0.7",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-geolocated": "^2.4.1",
