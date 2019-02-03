@@ -5,13 +5,21 @@ import Header from '../common/Header';
 import { Link } from '../routes';
 class Admin extends Component{
 
-    state={
-        loadingPage: true,
-    };
+  state={
+      patientAddress:'',
+      open:false,
+      loadingPage: true,
+      loading: false
+  };
 
     componentDidMount() {
         this.setState({loadingPage: false});
     }
+
+    onSubmit = ()=>{
+      var patientAddress = this.state.patient
+      App.discharge(patientAddress);
+    };
 
     render() {
         if(this.state.loadingPage){
