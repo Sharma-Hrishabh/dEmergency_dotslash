@@ -15,25 +15,17 @@ During the process of adding a hospital , fields like the address(ethereum addre
 
 
 #### User/Client End :
+This consists a simple UI with a single button,which a person will press in the case of emergency.As soon as user clicks the button,his current location coordiantes will be taken and his name and contact details are taken ,and the nearest hospital which has availability will be alloted to him.This will trigger two events ,one will carry information if the alloted hospital to the user,and other will inform the hospital about the patient.
 
 
+#### Backend or Ethereum End :
+
+The contract end will contain structs of Patient and Hospital,and their different mappings to access them as per use.
 
 
-
-### Backend or Ethereum End :
-
-
-
+#### Dependencies and Tools:
+Ethereum-Blockchain,Node JS,React JS,Metamask,Truffle Suite including express box,Ganache,Rinkeby Test-network,Python for implementation
+of Voronoi Algorithm to find the closest hospital nearby the user.
 
 
-### Dependencies and Tools:
-
-
-
-
-### Current Features:
-
-
-
-
-### Future Implementations:
+#### Future Implementations:
