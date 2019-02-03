@@ -15,6 +15,10 @@ module.exports = {
     rinkeby:{
       provider: () => new HDWalletProvider(process.env.MNEMONIC,"https://rinkeby.infura.io/v3/"+process.env.INFURA_API_KEY),
       network_id: 4
+    },
+    kovan:{
+      provider: () => new HDWalletProvider(process.env.MNEMONIC,"https://kovan.infura.io/v3/"+process.env.INFURA_API_KEY),
+      network_id: 42
     }
   }
 }
