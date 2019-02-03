@@ -1,5 +1,5 @@
 pragma solidity >=0.4.26;
-
+pragma experimental ABIEncoderV2;
 contract dEmergency {
 
     address private creator;
@@ -114,9 +114,9 @@ contract dEmergency {
 
     }
 
-    function showPatientAllotment(address _hospital,address _patient) public returns(string memory name){
+    function showPatientAllotment(address _hospital,address _patient) public returns(Patient memory){
 
-        return PatientHospital[_hospital][_patient].name;
+        return PatientHospital[_hospital][_patient];
 
 
     }
