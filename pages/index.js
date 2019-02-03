@@ -33,7 +33,7 @@ class Index extends Component{
         var speciality = this.state.speciality;
         var tempLocation = "100x80";
         var res = App.addPatient(tempLocation,phone,speciality,fullName);
-        this.setState({ msg: res.error});
+        // this.setState({ msg: res.error});
     };
 
     componentDidMount() {
@@ -141,7 +141,7 @@ class Index extends Component{
                         }
                         >
                     <Segment style={{ left: '35%', width: 500,position: 'fixed', top: '30%', zIndex: 1000 }}>
-                        {this.renderEmergency}
+                        {this.renderEmergency()}
                     </Segment>
                 </TransitionablePortal>
                 </div>
