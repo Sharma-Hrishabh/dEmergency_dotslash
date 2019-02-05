@@ -1,7 +1,7 @@
 # dEmergency:
 
 A decentralized SOS triggering service for medical emergencies,which will ensure fair allocation of the nearest hospital having availability ,to the person in need , in minimum time.
-
+![workflow](https://github.com/Sharma-Hrishabh/dEmergency_dotslash/blob/master/workflow.jpg)
 ## Idea Description:
 The main idea of the project is to provide treatment in.....
 
