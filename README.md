@@ -38,7 +38,10 @@ of Voronoi Algorithm to find the closest hospital nearby the user.
 We have used a famous algorithm for finding the nearest hospital from the point of emergency. It's Voronoi Diagrams.
 - In mathematics, a Voronoi diagram is a partitioning of a plane into regions based on distance to points in a specific subset of the plane. That set of points (called seeds, sites, or generators) is specified beforehand, and for each seed there is a corresponding region consisting of all points closer to that seed than to any other. These regions are called Voronoi cells. The Voronoi diagram of a set of points is dual to its Delaunay triangulation.
 
-![temp](https://github.com/Sharma-Hrishabh/dEmergency_dotslash/blob/master/imgs/Voronoi.png)
+<h1 align="center">
+<br>
+<img src="https://github.com/Sharma-Hrishabh/dEmergency_dotslash/blob/master/imgs/Voronoi.png" />
+</h1>
 
 ### Contribute
 
