@@ -44,7 +44,7 @@ We have used a famous algorithm for finding the nearest hospital from the point 
 
 Want to contribute? Great! Just make an issue and we'll respond or better just make a PR
 
-# Contributors
+## Contributors
 - [Hrishabh Sharma](https://github.com/Sharma-Hrishabh) 
 - [Shritesh](https://github.com/Shritesh99)
 - [Anubhav Chaturvedi](https://github.com/aniforverizon)
