@@ -4,9 +4,10 @@
 
 A decentralized SOS triggering service for medical emergencies,which will ensure fair allocation of the nearest hospital having availability ,to the person in need , in minimum time.
 
-<p align="center">
+<h1 align="center">
+<br>
 <img src="https://github.com/Sharma-Hrishabh/dEmergency_dotslash/blob/master/imgs/ss.png" />
-</p>  
+</h1>  
 
 ## Idea Description:
 The main idea of the project is to provide immediate treatment in case of Medical Emergency.
