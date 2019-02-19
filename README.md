@@ -2,7 +2,7 @@
 
 #### Project by Team nonce_ence at DotSlash Hackathon at SVNIT.
 
-A decentralized SOS triggering service for medical emergencies,which will ensure fair allocation of the nearest hospital having availability ,to the person in need , in minimum time.
+A decentralized SOS triggering service for medical emergencies,which will ensure fair allocation of the nearest hospital having availability ,to the person in need , in minimum time with a transaparency through blockchain.
 
 <h1 align="center">
 <br>
@@ -10,7 +10,7 @@ A decentralized SOS triggering service for medical emergencies,which will ensure
 </h1>  
 
 ## Idea Description:
-The main idea of the project is to provide immediate treatment in case of Medical Emergency.
+The main idea of the project is to provide immediate treatment in case of Medical Emergency by allocating him a hospital which is nearest to him ,by checking avaialbility data stored on blockchain(Ethereum).
 
 ## How will it's gonna work?
 Our dEmergency system can be divided into following ends:-
@@ -19,12 +19,14 @@ Our dEmergency system can be divided into following ends:-
 This consists a simple UI with a single button,which a person will press in the case of emergency.As soon as user clicks the button,his current location coordiantes will be taken and his name and contact details are taken ,and the nearest hospital which has availability will be alloted to him.This will trigger two events ,one will carry information if the alloted hospital to the user,and other will inform the hospital about the patient.
 
 #### Admin End :
-Admin End will consist of an admin who is the owner if the smart contract and has the authority to add good and licensed hospitals to the contract.
-During the process of adding a hospital , fields like the address(ethereum address) of ,longitude,latitide,contact no,Hospital Availability,Hospital Capacity and add the hospital data to the contract.
+Admin End will consist of an admin who is the owner of the smart contract and has the authority to add good and licensed hospitals to the contract.
+During imposition of the idea,the admin authority (like government) will try to impose the idea that each hospital will be represented by a ethereum address,and
+during the process of adding a hospital , fields like the address(ethereum address) of the hospital ,its longitude,latitide,contact no and dynamic data like Hospital Availability,Hospital Capacity will be taken and those data will be saved on the samrt contract.
 
 #### Backend or Ethereum End :
 
 The contract end will contain structs of Patient and Hospital,and their different mappings to access them as per use.
+
 
 <h1 align="center">
 <br>
