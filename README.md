@@ -16,16 +16,23 @@ The main idea of the project is to provide immediate treatment in case of Medica
 Our dEmergency system can be divided into following ends:-
 
 #### User/Client End :
-This consists a simple UI with a single button,which a person will press in the case of emergency.As soon as user clicks the button,his current location coordiantes will be taken and his name and contact details are taken ,and the nearest hospital which has availability will be alloted to him.This will trigger two events ,one will carry information if the alloted hospital to the user,and other will inform the hospital about the patient.
+This consists a simple UI with a single button,which a person will press in the case of emergency.
+As soon as user clicks the button,his current location coordiantes will be taken and his name and contact details are taken ,and the nearest hospital which has availability will be alloted to him.
+This will trigger two events ,one will carry information if the alloted hospital to the user,
+and other will inform the hospital about the patient.
 
 #### Admin End :
-Admin End will consist of an admin who is the owner of the smart contract and has the authority to add good and licensed hospitals to the contract.
-During imposition of the idea,the admin authority (like government) will try to impose the idea that each hospital will be represented by a ethereum address,and
-during the process of adding a hospital , fields like the address(ethereum address) of the hospital ,its longitude,latitide,contact no and dynamic data like Hospital Availability,Hospital Capacity will be taken and those data will be saved on the samrt contract.
+Admin End will consist of an admin who is the owner of the smart contract and has the authority to add good and licensed hospitals to the contract.<br>
+During imposition of the idea,the admin authority (like government) will try to impose the idea that each hospital will be represented by a ethereum address,and<br>
+During the process of adding a hospital , fields like the address(ethereum address) of the hospital ,its longitude,latitide,contact no and dynamic data like 
+1.Hospital Availability <br>
+2.Hospital Capacity <br>
+and many real world practical information will be taken and those data will be saved on the smart contract.
 
 #### Backend or Ethereum End :
 
-The contract end will contain structs of Patient and Hospital,and their different mappings to access them as per use.
+The contract end will contain structs of Patient and Hospital,and their different mappings to access them as per use.<br>
+
 
 
 <h1 align="center">
