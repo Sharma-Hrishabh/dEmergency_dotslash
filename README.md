@@ -32,7 +32,13 @@ and many real world practical information will be taken and those data will be s
 #### Backend or Ethereum End :
 
 The contract end will contain structs of Patient and Hospital,and their different mappings to access them as per use.<br>
-
+Structure of Smart Contract:<br>
+Functions:<br>
+<ul>
+  <li>addHospital:This function can only be executed by admin.It is provided to register a Hospital by putting all necessary information related to the hospital on the blockchain</li>
+  <li>addPatient:This function can be used by a normal user in the case of emergency.This will take minimal input as arguements from the user like his name,type of emergency ,mobile number,and his location which will be automatically detected by the web-app</li>
+ </ul>
+  
 
 
 <h1 align="center">
