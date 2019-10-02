@@ -68,6 +68,10 @@ Want to contribute? Great! Just make an issue and we'll respond or better just m
 - [Shritesh](https://github.com/Shritesh99)
 - [Anubhav Chaturvedi](https://github.com/aniforverizon)
 
+## Hackathon Performance
+The project was able to make it to the top 5 of all projects that featured at the hackathon.
+
+
 License
 ----
 
